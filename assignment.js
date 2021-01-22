@@ -6,41 +6,50 @@ function kilometerToMeter(kilometers){
     if(kilometers >= 0){
         meters =  kilometers * 1000;
     }
-    else if(kilometers < 0){
+    else{
         return "Can't be negative!!";
     }
     return meters;
 }
-var totalMeter =  kilometerToMeter(-1);
+var totalMeter =  kilometerToMeter(6);
 console.log(totalMeter);
 
 
 //Budget-Calculator
-function budgetCalculator(clock, phone, laptop){
+// function budgetCalculator(clock, phone, laptop){
     
-    var clockPrice = clock * 50;
-    var phonePrice = phone * 100;
-    var laptopPrice = laptop * 500;
+//     var clockPrice = clock * 50;
+//     var phonePrice = phone * 100;
+//     var laptopPrice = laptop * 500;
 
-    var total = clockPrice + phonePrice + laptopPrice;
-    return total;
-}
+//     var total = clockPrice + phonePrice + laptopPrice;
+//     return total;
+// }
 
-var totalAmount =  budgetCalculator(10, 15, 20);
-console.log(totalAmount);
+// var totalAmount =  budgetCalculator(10, 15, 20);
+// console.log(totalAmount);
+
+
 
 
 //Hotel-Cost
-// function hotelCost(days){
-//     if(days >= 10){
-//         console.log('100');
-//     } 
-//     else if(days <= 20){
-//         console.log('80');
-//     }
-//     else{
-//         console.log('50');
-//     }
-// }
-// var check = hotelCost(1700);
-// console.log(check);
+function hotelCost(days){
+    var total;
+    if(days >= 0){
+        if(days <= 10){
+            total = days * 100;
+        } 
+        else if(days > 10 && days <= 20){
+            total = days * 80 + 200;
+        }
+        else{
+            total = days * 50 + 800;
+        }
+    }
+    else{
+        return "Can't be negative!!";
+    }
+    return total;
+}
+var result = hotelCost(21);
+console.log(result);
