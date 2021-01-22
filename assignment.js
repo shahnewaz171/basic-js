@@ -6,6 +6,9 @@ function kilometerToMeter(kilometers){
     if(kilometers >= 0){
         meters =  kilometers * 1000;
     }
+    else if(kilometers < 0){
+        return "Distance cannot be negative";
+    }
     else{
         return "Unexpected error";
     }
@@ -51,14 +54,17 @@ function hotelCost(days){
     else if(days < 0){
         return "Can't be negative!!";
     }
+    else{
+        return "Unexpected error";
+    }
     return total;
 }
-var totalCost = hotelCost(22);
+var totalCost = hotelCost(23);
 console.log(totalCost);
 
 
 //Mega-Friend
-var allNames = ['Moon', 'Hasan Mahmud', 'Shahriar', 'Aladin', 'Mahmud Hasan'];
+var friendsName = ['Moon', 'Hasan Mahmud', 'Shahriar', 'Aladin'];
 
 function megaFriend(names){
     var strLongest = names[0].length;
@@ -72,5 +78,5 @@ function megaFriend(names){
     }
     return longest;
 }
-var longestName = megaFriend(allNames);
+var longestName = megaFriend(friendsName);
 console.log(longestName);
