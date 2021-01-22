@@ -45,10 +45,10 @@ function hotelCost(days){
             total = days * 100;
         } 
         else if(days > 10 && days <= 20){
-            total = days * 80 + 200;
+            total = (10 * 100) + ((days - 10) * 80);
         }
         else{
-            total = days * 50 + 800;
+            total = (10 * 100) + (10 * 80) + ((days - 20) * 50);
         }
     }
     else if(days < 0){
@@ -69,6 +69,10 @@ var friendsName = ['Moon', 'Hasan Mahmud', 'Shahriar', 'Aladin'];
 function megaFriend(names){
     var strLongest = names[0].length;
     var longest = names[0];
+    if (names.length == 0)
+    {
+        return 'Sorry there is no name!!';
+    }
     for (var i = 0; i < names.length; i++){
         var element = names[i].length;
         if(element > strLongest){
