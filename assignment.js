@@ -69,10 +69,7 @@ var friendsName = ['Moon', 'Hasan Mahmud', 'Shahriar', 'Aladin'];
 function megaFriend(names){
     var strLongest = names[0].length;
     var longest = names[0];
-    if (names.length == 0)
-    {
-        return 'Sorry there is no name!!';
-    }
+    
     for (var i = 0; i < names.length; i++){
         var element = names[i].length;
         if(element > strLongest){
