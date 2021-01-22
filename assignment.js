@@ -2,11 +2,16 @@
 
 //Kilometer-To-Meter
 function kilometerToMeter(kilometers){
-    var meters = kilometers * 1000;
-
+    var meters;
+    if(kilometers >= 0){
+        meters =  kilometers * 1000;
+    }
+    else if(kilometers < 0){
+        return "Can't be negative!!";
+    }
     return meters;
 }
-var totalMeter =  kilometerToMeter(50);
+var totalMeter =  kilometerToMeter(-1);
 console.log(totalMeter);
 
 
@@ -23,3 +28,19 @@ function budgetCalculator(clock, phone, laptop){
 
 var totalAmount =  budgetCalculator(10, 15, 20);
 console.log(totalAmount);
+
+
+//Hotel-Cost
+// function hotelCost(days){
+//     if(days >= 10){
+//         console.log('100');
+//     } 
+//     else if(days <= 20){
+//         console.log('80');
+//     }
+//     else{
+//         console.log('50');
+//     }
+// }
+// var check = hotelCost(1700);
+// console.log(check);
