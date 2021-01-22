@@ -7,29 +7,31 @@ function kilometerToMeter(kilometers){
         meters =  kilometers * 1000;
     }
     else{
-        return "Can't be negative!!";
+        return "Unexpected error";
     }
     return meters;
 }
-var totalMeter =  kilometerToMeter(6);
+var totalMeter =  kilometerToMeter(14);
 console.log(totalMeter);
 
 
 //Budget-Calculator
-// function budgetCalculator(clock, phone, laptop){
-    
-//     var clockPrice = clock * 50;
-//     var phonePrice = phone * 100;
-//     var laptopPrice = laptop * 500;
+function budgetCalculator(clock, phone, laptop){
+    var total;
+    if(clock >= 0 && phone >= 0 && laptop >= 0){
+        var clockPrice = clock * 50;
+        var phonePrice = phone * 100;
+        var laptopPrice = laptop * 500;
 
-//     var total = clockPrice + phonePrice + laptopPrice;
-//     return total;
-// }
-
-// var totalAmount =  budgetCalculator(10, 15, 20);
-// console.log(totalAmount);
-
-
+        total = clockPrice + phonePrice + laptopPrice;
+    }
+    else{
+        return "Unexpected error";
+    }
+    return total;
+}
+var totalAmount =  budgetCalculator(2, 4, 7);
+console.log(totalAmount);
 
 
 //Hotel-Cost
@@ -46,10 +48,29 @@ function hotelCost(days){
             total = days * 50 + 800;
         }
     }
-    else{
+    else if(days < 0){
         return "Can't be negative!!";
     }
     return total;
 }
-var result = hotelCost(21);
-console.log(result);
+var totalCost = hotelCost(22);
+console.log(totalCost);
+
+
+//Mega-Friend
+var allNames = ['Moon', 'Hasan Mahmud', 'Shahriar', 'Aladin', 'Mahmud Hasan'];
+
+function megaFriend(names){
+    var strLongest = names[0].length;
+    var longest = names[0];
+    for (var i = 0; i < names.length; i++){
+        var element = names[i].length;
+        if(element > strLongest){
+            longest = names[i];
+            strLongest = element;
+        }
+    }
+    return longest;
+}
+var longestName = megaFriend(allNames);
+console.log(longestName);
